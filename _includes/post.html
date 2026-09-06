@@ -1,26 +1,35 @@
 {% assign post = include.post %}
+{% assign dias3 = "dom,lun,mar,mié,jue,vie,sáb" | split: "," %}
 <article class="post">
   <p class="fecha">{% include fecha.html t=post.date %}</p>
   <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
   <div class="cuerpo">
     {{ include.content }}
   </div>
-  {% if post.photo_url %}
-  <section class="foto">
-    <h2>La foto de hoy</h2>
-    <img src="{{ post.photo_url }}" alt="{{ post.photo_title }}" loading="lazy">
-    <p>{{ post.photo_caption }} <span class="credito">Foto: NASA, «{{ post.photo_title }}».</span></p>
-  </section>
-  {% endif %}
-  {% if post.launches %}
-  <section class="lanzamientos">
-    <h2>Próximos lanzamientos</h2>
-    <ul>
-      {% for l in post.launches %}
-      <li><strong>{% include fecha.html t=l.net %}, {{ l.net | date: "%H:%M" }} hora de Uruguay</strong> — {{ l.rocket }}, desde {{ l.where }}.<br>{{ l.what }}</li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% endif %}
   <p class="fuente">Para leer más con un adulto (en inglés): <a href="{{ post.source_url }}">{{ post.source_name }}</a>.</p>
 </article>
+{% if post.photo_url %}
+<section class="foto">
+  <div class="foto__marco">
+    <h2>La foto de hoy</h2>
+    <img src="{{ post.photo_url }}" alt="{{ post.photo_title }}" loading="lazy">
+    <p>{{ post.photo_caption }}</p>
+    <p class="credito">Foto: NASA, «{{ post.photo_title }}».</p>
+  </div>
+</section>
+{% endif %}
+{% if post.launches %}
+<section class="agenda">
+  <h2>Próximos lanzamientos</h2>
+  <ul>
+    {% for l in post.launches %}
+    {% assign w = l.net | date: "%w" | plus: 0 %}
+    <li>
+      <div class="agenda__dia"><span>{{ dias3[w] }}</span><b>{{ l.net | date: "%-d" }}</b><span>{{ l.net | date: "%H:%M" }}</span></div>
+      <div class="agenda__que"><b>{{ l.rocket }}</b><span>{{ l.where }}</span><p>{{ l.what }}</p></div>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="agenda__nota">Horas de Uruguay.</p>
+</section>
+{% endif %}

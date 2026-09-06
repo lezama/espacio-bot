@@ -1,34 +1,67 @@
 :root {
-  --fondo: #0b1026;
-  --tarjeta: #151c3b;
-  --texto: #f3f1ff;
-  --suave: #b7b3d6;
-  --acento: #ffd166;
-  --acento2: #ff7eb6;
+  --fondo: #F3EEFF;
+  --tinta: #1B1140;
+  --suave: #6A6190;
+  --coral: #FF5C8A;
+  --violeta: #6B4DFF;
+  --noche: #17103A;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --texto: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  background: var(--fondo) radial-gradient(circle at 20% 10%, #1c2557 0, transparent 40%);
-  color: var(--texto);
-  font: 19px/1.6 "Nunito", "Segoe UI", system-ui, sans-serif;
+  background: var(--fondo);
+  color: var(--tinta);
+  font: 20px/1.55 var(--texto);
 }
-a { color: var(--acento); }
-.top { text-align: center; padding: 2.5rem 1rem 1rem; }
-.brand { font-size: 2.2rem; font-weight: 800; text-decoration: none; color: var(--acento); letter-spacing: .5px; }
-main { max-width: 42rem; margin: 0 auto; padding: 1rem; }
-.post { background: var(--tarjeta); border-radius: 1.5rem; padding: 2rem 1.75rem; margin-bottom: 2rem; }
-.post h1 { font-size: 2rem; line-height: 1.2; margin: .2rem 0 1.2rem; }
-.post h1 a { color: var(--texto); text-decoration: none; }
-.post h2 { font-size: 1.3rem; color: var(--acento2); margin: 2rem 0 .6rem; }
-.fecha { color: var(--suave); font-size: .95rem; margin: 0; }
-.cuerpo p { margin: 0 0 1rem; }
-.cuerpo ul, .foto img { width: 100%; border-radius: 1rem; }
-.credito { color: var(--suave); font-size: .9rem; }
-.lanzamientos li { margin-bottom: .8rem; }
-.fuente { color: var(--suave); font-size: .95rem; margin-top: 2rem; }
-.nav, .anteriores { padding: 0 .5rem; }
-.anteriores ul { list-style: none; padding: 0; }
-.anteriores li { padding: .5rem 0; border-bottom: 1px solid #262e57; }
-.anteriores .fecha { display: block; }
-footer { max-width: 42rem; margin: 3rem auto; padding: 0 1.5rem; color: var(--suave); font-size: .9rem; text-align: center; }
+a { color: var(--violeta); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; border-radius: 4px; }
+h1, h2, .marca, .agenda__dia { font-family: var(--display); font-optical-sizing: auto; }
+
+.top { max-width: 42rem; margin: 0 auto; padding: 1.6rem 1.25rem 0; }
+.marca { font-size: 1.15rem; font-weight: 700; color: var(--tinta); text-decoration: none; }
+main { max-width: 42rem; margin: 0 auto; padding: 0 1.25rem; }
+
+.post { padding: 2.5rem 0 1rem; }
+.fecha { color: var(--suave); font-size: .95rem; margin: 0 0 .6rem; }
+.post h1 { font-size: clamp(2.3rem, 7vw, 3.7rem); line-height: 1.02; letter-spacing: -.025em; font-weight: 800; margin: 0 0 1.6rem; }
+.post h1 a { color: inherit; text-decoration: none; }
+.cuerpo p { margin: 0 0 1.1rem; }
+.cuerpo strong { font-weight: 700; }
+.cuerpo h2, .agenda h2, .anteriores h2, .foto h2 { font-size: 1.45rem; font-weight: 700; letter-spacing: -.01em; margin: 2.2rem 0 .7rem; }
+.cuerpo ul { list-style: none; padding: 0; margin: 0; }
+.cuerpo li { margin: 0 0 .7rem; }
+.cuerpo li strong { display: inline-block; background: var(--coral); color: #fff; border-radius: 999px; padding: .05em .7em; margin-right: .3em; font-family: var(--display); font-weight: 700; }
+.fuente { color: var(--suave); font-size: .95rem; margin: 2rem 0 0; }
+
+.foto { background: var(--noche); color: #fff; margin: 2.5rem -1.25rem 0; padding: 2rem 1.25rem 2.2rem; }
+.foto__marco { max-width: 42rem; margin: 0 auto; }
+.foto h2 { margin-top: 0; }
+.foto img { width: 100%; max-height: 80vh; object-fit: contain; border-radius: 1.25rem; background: #000; }
+.foto p { margin: 1rem 0 0; }
+.credito { color: #B8B0DC; font-size: .9rem; }
+
+.agenda { padding-top: .5rem; }
+.agenda ul { list-style: none; padding: 0; margin: 0; }
+.agenda li { display: grid; grid-template-columns: 4.6rem 1fr; gap: 1rem; padding: 1rem 0; border-top: 2px solid #DCD3F5; }
+.agenda__dia { display: flex; flex-direction: column; align-items: center; line-height: 1; color: var(--violeta); font-weight: 700; }
+.agenda__dia b { font-size: 2.4rem; font-weight: 800; letter-spacing: -.03em; color: var(--tinta); margin: .15rem 0; }
+.agenda__dia span { font-size: .9rem; }
+.agenda__que b { display: block; font-size: 1.05rem; }
+.agenda__que span { display: block; color: var(--suave); font-size: .9rem; margin: .15rem 0 .4rem; }
+.agenda__que p { margin: 0; }
+.agenda__nota { color: var(--suave); font-size: .9rem; margin: .8rem 0 0; }
+
+.anteriores { padding-top: 1rem; }
+.anteriores ul { list-style: none; padding: 0; margin: 0; }
+.anteriores li { padding: .8rem 0; border-top: 2px solid #DCD3F5; }
+.anteriores .fecha { display: block; margin: 0 0 .1rem; }
+.anteriores a { font-family: var(--display); font-weight: 700; font-size: 1.2rem; text-decoration: none; color: var(--tinta); }
+.anteriores a:hover { color: var(--violeta); }
+.volver { margin: 2.5rem 0; }
+
+footer { max-width: 42rem; margin: 3.5rem auto 2rem; padding: 0 1.25rem; color: var(--suave); font-size: .9rem; }
+@media (min-width: 48rem) {
+  .foto { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding-left: 1.25rem; padding-right: 1.25rem; }
+}

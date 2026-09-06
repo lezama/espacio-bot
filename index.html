@@ -8,7 +8,7 @@ layout: default
   <h2>Días anteriores</h2>
   <ul>
     {% for post in site.posts offset:1 limit:30 %}
-    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="fecha">{% include fecha.html t=post.date %}</span></li>
+    <li><span class="fecha">{% include fecha.html t=post.date %}</span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
 </section>
