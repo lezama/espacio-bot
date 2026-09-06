@@ -10,7 +10,7 @@ Todas las mañanas a las 7 (hora de Uruguay):
 
 1. Un workflow abre un issue y se lo asigna al agente de GitHub Copilot.
 2. El agente corre `fetch.py`, que baja las últimas noticias de la [Spaceflight News API](https://api.spaceflightnewsapi.net/v4/docs/), los próximos lanzamientos de [Launch Library](https://ll.thespacedevs.com/docs/) y la foto del día de la NASA (APOD). Las tres son JSON abierto, sin scraping.
-3. Con eso y las instrucciones de [`prompt.md`](prompt.md), el agente elige una noticia, la escribe para niñas y abre un PR con un solo archivo en `_posts/`.
+3. Con eso y las instrucciones de [`prompt.md`](prompt.md), el agente elige una noticia, la escribe en lenguaje claro y abre un PR con un solo archivo en `_posts/`.
 4. Otro workflow comprueba que el PR toca solo ese archivo y que el frontmatter es válido, y lo mergea. GitHub Pages construye el sitio con Jekyll.
 
 Sin servidores y sin API keys: Copilot escribe, Actions publica, Pages sirve.
