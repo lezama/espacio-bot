@@ -1,0 +1,26 @@
+{% assign post = include.post %}
+<article class="post">
+  <p class="fecha">{{ post.fecha_texto }}</p>
+  <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+  <div class="cuerpo">
+    {{ include.content }}
+  </div>
+  {% if post.photo_url %}
+  <section class="foto">
+    <h2>La foto de hoy</h2>
+    <img src="{{ post.photo_url }}" alt="{{ post.photo_title }}" loading="lazy">
+    <p>{{ post.photo_caption }} <span class="credito">Foto: NASA, «{{ post.photo_title }}».</span></p>
+  </section>
+  {% endif %}
+  {% if post.launches %}
+  <section class="lanzamientos">
+    <h2>Próximos lanzamientos</h2>
+    <ul>
+      {% for l in post.launches %}
+      <li><strong>{{ l.when }}</strong> — {{ l.rocket }}, desde {{ l.where }}.<br>{{ l.what }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+  <p class="fuente">Para leer más con un adulto (en inglés): <a href="{{ post.source_url }}">{{ post.source_name }}</a>.</p>
+</article>

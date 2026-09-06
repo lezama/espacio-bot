@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{% if site.posts.size == 0 %}
+<p class="vacio">Todavía no hay noticias. El primer post sale mañana a las 7.</p>
+{% else %}
+{% assign hoy = site.posts.first %}
+{% include post.html post=hoy content=hoy.content %}
+{% if site.posts.size > 1 %}
+<section class="anteriores">
+  <h2>Días anteriores</h2>
+  <ul>
+    {% for post in site.posts offset:1 limit:30 %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="fecha">{{ post.fecha_texto }}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endif %}

@@ -1,0 +1,39 @@
+:root {
+  --fondo: #0b1026;
+  --tarjeta: #151c3b;
+  --texto: #f3f1ff;
+  --suave: #b7b3d6;
+  --acento: #ffd166;
+  --acento2: #ff7eb6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--fondo) radial-gradient(circle at 20% 10%, #1c2557 0, transparent 40%);
+  color: var(--texto);
+  font: 19px/1.6 "Nunito", "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--acento); }
+.top { text-align: center; padding: 2.5rem 1rem 1rem; }
+.brand { font-size: 2.2rem; font-weight: 800; text-decoration: none; color: var(--acento); letter-spacing: .5px; }
+.tagline { margin: .3rem 0 0; color: var(--suave); }
+main { max-width: 42rem; margin: 0 auto; padding: 1rem; }
+.post { background: var(--tarjeta); border-radius: 1.5rem; padding: 2rem 1.75rem; margin-bottom: 2rem; }
+.post h1 { font-size: 2rem; line-height: 1.2; margin: .2rem 0 1.2rem; }
+.post h1 a { color: var(--texto); text-decoration: none; }
+.post h2 { font-size: 1.3rem; color: var(--acento2); margin: 2rem 0 .6rem; }
+.fecha { color: var(--suave); font-size: .95rem; margin: 0; }
+.cuerpo p { margin: 0 0 1rem; }
+.cuerpo ul { padding-left: 1.3rem; }
+.foto img { width: 100%; border-radius: 1rem; }
+.foto p, .lanzamientos li { color: var(--texto); }
+.credito { color: var(--suave); font-size: .9rem; }
+.lanzamientos ul { padding-left: 1.3rem; }
+.lanzamientos li { margin-bottom: .8rem; }
+.fuente { color: var(--suave); font-size: .95rem; margin-top: 2rem; }
+.nav, .anteriores { padding: 0 .5rem; }
+.anteriores ul { list-style: none; padding: 0; }
+.anteriores li { padding: .5rem 0; border-bottom: 1px solid #262e57; }
+.anteriores .fecha { display: block; }
+.vacio { text-align: center; color: var(--suave); padding: 3rem 1rem; }
+footer { max-width: 42rem; margin: 3rem auto; padding: 0 1.5rem; color: var(--suave); font-size: .9rem; text-align: center; }

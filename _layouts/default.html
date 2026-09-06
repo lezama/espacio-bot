@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <link rel="alternate" type="application/atom+xml" href="{{ '/feed.xml' | relative_url }}">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <p class="tagline">{{ site.description }}</p>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <p>Este diario lo escribe un robot todas las mañanas leyendo las noticias de la NASA, la ESA y otros medios del espacio. Un adulto lo revisa cuando puede. Si encontrás algo raro, contalo <a href="https://github.com/lezama/espacio-bot/issues">acá</a>.</p>
+  </footer>
+</body>
+</html>
