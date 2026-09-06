@@ -45,11 +45,11 @@ launches:                          # una entrada por cada lanzamiento del JSON
     what: "Una oración con qué cohete es, qué lleva y de dónde sale, a partir de mision y desde. Si mision dice Details TBD o parecido, decí que todavía no se sabe qué lleva."
 ---
 
-La noticia: 150 a 250 palabras, 3 a 5 párrafos. Como mucho una **negrita** por párrafo. Sin títulos acá.
+<acá va la noticia: 150 a 250 palabras, 3 a 5 párrafos, como mucho una **negrita** por párrafo, sin títulos ni etiquetas como "La noticia:">
 
 ## ¿Por qué importa?
 
-Una o dos oraciones.
+<una o dos oraciones>
 
 ## Palabras nuevas
 
