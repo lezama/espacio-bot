@@ -6,32 +6,32 @@ Una noticia del espacio por día, contada para niñas de 8 a 12 años. En españ
 
 ## Cómo funciona
 
-Todas las mañanas a las 7 (hora de Uruguay) un workflow de GitHub Actions corre `bot.py`, que:
+Todas las mañanas a las 7 (hora de Uruguay):
 
-1. Baja las últimas noticias de la [Spaceflight News API](https://api.spaceflightnewsapi.net/v4/docs/), los próximos lanzamientos de [Launch Library](https://ll.thespacedevs.com/docs/) y la foto del día de la NASA (APOD). Las tres son JSON abierto, sin scraping.
-2. Le pasa todo eso a Claude con las instrucciones de [`prompt.md`](prompt.md) y recibe una noticia elegida y escrita para niñas, con glosario y una línea por lanzamiento.
-3. Escribe `_posts/AAAA-MM-DD-espacio.md` y lo commitea a `main`. GitHub Pages construye el sitio con Jekyll.
+1. Un workflow abre un issue y se lo asigna al agente de GitHub Copilot.
+2. El agente corre `fetch.py`, que baja las últimas noticias de la [Spaceflight News API](https://api.spaceflightnewsapi.net/v4/docs/), los próximos lanzamientos de [Launch Library](https://ll.thespacedevs.com/docs/) y la foto del día de la NASA (APOD). Las tres son JSON abierto, sin scraping.
+3. Con eso y las instrucciones de [`prompt.md`](prompt.md), el agente elige una noticia, la escribe para niñas y abre un PR con un solo archivo en `_posts/`.
+4. Otro workflow comprueba que el PR toca solo ese archivo y que el frontmatter es válido, y lo mergea. GitHub Pages construye el sitio con Jekyll.
 
-No hay agente, no hay servidores, no hay PRs: un script, una llamada al modelo, un commit.
+Sin servidores y sin API keys: Copilot escribe, Actions publica, Pages sirve.
 
 ## Cambiar cómo escribe
 
-Todo el criterio editorial (qué noticia elegir, tono, qué no decir) vive en [`prompt.md`](prompt.md). Editalo y el post de mañana ya sale distinto.
+Todo el criterio editorial (qué noticia elegir, tono, qué no decir, formato del post) vive en [`prompt.md`](prompt.md). Editalo y el post de mañana ya sale distinto. Lo que hace el agente paso a paso está en [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
 
 ## Correr a mano
 
 ```bash
-pip install anthropic
-python bot.py --dry-run          # muestra qué recibiría el modelo, sin llamarlo
-ANTHROPIC_API_KEY=... python bot.py   # escribe el post de hoy (si ya existe, borralo primero)
+python3 fetch.py            # imprime el JSON que recibe el agente
 ```
 
-En GitHub: **Actions → Post del día → Run workflow**.
+En GitHub: **Actions → Pedir el post del día → Run workflow**.
 
-## Secrets
+## Configuración
 
-- `ANTHROPIC_API_KEY` (obligatorio).
-- `NASA_API_KEY` (opcional; sin él usa `DEMO_KEY`, que tiene cupo chico y a veces falla, y entonces el post sale sin foto).
+- Secret `COPILOT_PAT`: fine-grained PAT con Issues, Pull requests, Contents y Actions en lectura y escritura sobre este repo. Lo usan los workflows para asignar el issue a Copilot y para mergear.
+- Secret `NASA_API_KEY` (opcional): sin él `fetch.py` usa `DEMO_KEY`, que tiene cupo chico; si falla, el post sale sin foto.
+- Label `dia`.
 
 ## Licencia
 

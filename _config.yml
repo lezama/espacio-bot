@@ -13,7 +13,7 @@ defaults:
     values:
       layout: post
 exclude:
-  - bot.py
+  - fetch.py
   - prompt.md
   - README.md
   - LICENSE
