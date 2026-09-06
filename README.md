@@ -1,6 +1,6 @@
 # Hoy en el espacio
 
-Una noticia del espacio por día, contada para niñas de 8 a 12 años. En español, sin miedo y sin inventar nada.
+Una noticia del espacio por día. En español, sin miedo y sin inventar nada.
 
 **Sitio:** https://lezama.github.io/espacio-bot/
 
