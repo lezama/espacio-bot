@@ -1,6 +1,6 @@
 {% assign post = include.post %}
 <article class="post">
-  <p class="fecha">{{ post.fecha_texto }}</p>
+  <p class="fecha">{% include fecha.html t=post.date %}</p>
   <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
   <div class="cuerpo">
     {{ include.content }}
@@ -17,7 +17,7 @@
     <h2>Próximos lanzamientos</h2>
     <ul>
       {% for l in post.launches %}
-      <li><strong>{{ l.when }}</strong> — {{ l.rocket }}, desde {{ l.where }}.<br>{{ l.what }}</li>
+      <li><strong>{% include fecha.html t=l.net %}, {{ l.net | date: "%H:%M" }} hora de Uruguay</strong> — {{ l.rocket }}, desde {{ l.where }}.<br>{{ l.what }}</li>
       {% endfor %}
     </ul>
   </section>

@@ -2,11 +2,8 @@ title: Hoy en el espacio
 description: Una noticia del espacio por día.
 url: "https://lezama.github.io"
 baseurl: "/espacio-bot"
-lang: es-UY
 timezone: America/Montevideo
 permalink: /:year/:month/:day/
-plugins:
-  - jekyll-feed
 defaults:
   - scope:
       type: posts

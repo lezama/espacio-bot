@@ -31,7 +31,6 @@ En GitHub: **Actions → Pedir el post del día → Run workflow**.
 
 - Secret `COPILOT_PAT`: fine-grained PAT con Issues, Pull requests, Contents y Actions en lectura y escritura sobre este repo. Lo usan los workflows para asignar el issue a Copilot y para mergear.
 - Secret `NASA_API_KEY` (opcional): sin él `fetch.py` usa `DEMO_KEY`, que tiene cupo chico; si falla, el post sale sin foto.
-- Label `dia`.
 
 ## Licencia
 
