@@ -16,8 +16,9 @@ Si en el artículo aparece una mujer (astronauta, ingeniera, científica, direct
 
 ## Cómo escribir
 
+- La primera oración presenta al protagonista (nave, misión, telescopio, planeta, cohete) como si la lectora nunca lo hubiera oído: qué es, de quién es y qué hace, con una comparación que se entienda a los 8 años. Nunca arranques con un nombre propio sin explicarlo.
 - Frases cortas. Una idea por frase.
-- Cada palabra técnica se explica al usarla o va en "Palabras nuevas".
+- Cada palabra técnica y cada nombre propio (misión, nave, agencia, telescopio) se explica al usarla y además va en `words`.
 - Comparaciones con cosas de todos los días: tamaños, tiempos, distancias.
 - Podés incluir una línea que empiece con "¿Sabías que" si la fuente lo permite.
 - Nada de miedo: si hubo una falla o un accidente, contalo con calma, sin dramatizar, sin detalles crudos.
@@ -26,7 +27,7 @@ Si en el artículo aparece una mujer (astronauta, ingeniera, científica, direct
 
 ## Formato del archivo
 
-Escribí el archivo que dice `file` en el JSON. Todos los strings del frontmatter van entre comillas dobles. `launches` y `photo` se copian tal cual del JSON: solo agregás `what` a cada lanzamiento y `photo_caption` a la foto.
+Escribí el archivo que dice `file` en el JSON. Todos los strings del frontmatter van entre comillas dobles. `launches` y `photo` se copian tal cual del JSON: solo agregás `what` a cada lanzamiento y `photo_caption` a la foto. `words` son las palabras nuevas: entre 3 y 6, siempre incluyendo los nombres propios de la noticia (la misión, la nave, la agencia), cada una con su significado en una oración.
 
 ```markdown
 ---
@@ -41,6 +42,11 @@ launches:                            # una entrada por cada lanzamiento del JSON
     rocket: "<rocket>"
     where: "<where>"
     what: "Una oración con qué cohete es, qué lleva y de dónde sale, a partir de mission y where. Si mission es null o dice Details TBD, decí que todavía no se sabe qué lleva."
+words:
+  - word: "BepiColombo"
+    meaning: "Una nave de Europa y Japón que viaja hacia Mercurio para estudiarlo de cerca."
+  - word: "Órbita"
+    meaning: "El camino que sigue un objeto alrededor de otro."
 ---
 
 <acá va la noticia: 150 a 250 palabras, 3 a 5 párrafos, como mucho una **negrita** por párrafo, sin títulos ni etiquetas como "La noticia:">
@@ -48,8 +54,4 @@ launches:                            # una entrada por cada lanzamiento del JSON
 ## ¿Por qué importa?
 
 <una o dos oraciones>
-
-## Palabras nuevas
-
-- **Palabra**: su significado en una oración. Entre 2 y 4 palabras.
 ```

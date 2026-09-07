@@ -1,0 +1,15 @@
+---
+layout: default
+title: Palabras del espacio
+permalink: /palabras/
+---
+<section class="palabras palabras--todas">
+  <h1>Palabras del espacio</h1>
+  <p class="fecha">Todo lo que fuimos aprendiendo, día a día. Cada palabra lleva a la noticia donde apareció.</p>
+  {% for post in site.posts %}{% if post.words %}
+  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+  <ul>
+    {% for w in post.words %}<li><strong>{{ w.word }}</strong> {{ w.meaning }}</li>{% endfor %}
+  </ul>
+  {% endif %}{% endfor %}
+</section>

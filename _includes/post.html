@@ -6,6 +6,15 @@
   <div class="cuerpo">
     {{ include.content }}
   </div>
+  {% if post.words %}
+  <section class="palabras">
+    <h2>Palabras nuevas</h2>
+    <ul>
+      {% for w in post.words %}<li><strong>{{ w.word }}</strong> {{ w.meaning }}</li>{% endfor %}
+    </ul>
+    <p class="palabras__todas"><a href="{{ '/palabras/' | relative_url }}">Todas las palabras del espacio</a></p>
+  </section>
+  {% endif %}
   <p class="fuente">Para leer más con un adulto (en inglés): <a href="{{ post.source_url }}">{{ post.source_name }}</a>.</p>
 </article>
 {% if post.photo_url %}
