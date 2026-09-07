@@ -3,6 +3,7 @@
 <article class="post">
   <p class="fecha">{% include fecha.html t=post.date %}</p>
   <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+  {% if post.first %}<p class="primera">{{ post.first }}</p>{% endif %}
   <div class="cuerpo">
     {{ include.content }}
   </div>

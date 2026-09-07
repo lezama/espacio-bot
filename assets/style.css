@@ -27,6 +27,7 @@ main { max-width: 42rem; margin: 0 auto; padding: 0 1.25rem; }
 .fecha { color: var(--suave); font-size: .95rem; margin: 0 0 .6rem; }
 .post h1 { font-size: clamp(2.3rem, 7vw, 3.7rem); line-height: 1.02; letter-spacing: -.025em; font-weight: 800; margin: 0 0 1.6rem; }
 .post h1 a { color: inherit; text-decoration: none; }
+.primera { font-family: var(--display); font-weight: 700; font-size: 1.25rem; line-height: 1.3; color: var(--tinta); background: #FFE3EC; border-left: .5rem solid var(--coral); border-radius: 0 1rem 1rem 0; padding: .8rem 1.1rem; margin: -.4rem 0 1.8rem; }
 .cuerpo p { margin: 0 0 1.1rem; }
 .cuerpo strong { font-weight: 700; }
 .cuerpo h2, .agenda h2, .anteriores h2, .foto h2, .palabras h2 { font-size: 1.45rem; font-weight: 700; letter-spacing: -.01em; margin: 2.2rem 0 .7rem; }

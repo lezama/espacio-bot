@@ -20,6 +20,7 @@ Si en el artículo aparece una mujer (astronauta, ingeniera, científica, direct
 - Frases cortas. Una idea por frase.
 - Cada palabra técnica y cada nombre propio (misión, nave, agencia, telescopio) se explica al usarla y además va en `words`.
 - Comparaciones con cosas de todos los días: tamaños, tiempos, distancias.
+- Buscá en la fuente si hay una primera vez o un récord (la primera nave de X, el cohete más grande, la vez que más lejos llegó algo). Si lo hay, va en `first`; si no lo dice la fuente, `first` se omite. Nunca lo inventes ni lo exageres.
 - Podés incluir una línea que empiece con "¿Sabías que" si la fuente lo permite.
 - Nada de miedo: si hubo una falla o un accidente, contalo con calma, sin dramatizar, sin detalles crudos.
 - Sin links, sin redes sociales, sin marcas con adjetivos de propaganda (nombrar a la empresa está bien).
@@ -42,6 +43,7 @@ launches:                            # una entrada por cada lanzamiento del JSON
     rocket: "<rocket>"
     where: "<where>"
     what: "Una oración con qué cohete es, qué lleva y de dónde sale, a partir de mission y where. Si mission es null o dice Details TBD, decí que todavía no se sabe qué lleva."
+first: "Es la primera vez que un cohete llega a órbita despegando desde Europa continental."   # solo si la fuente lo dice
 words:
   - word: "BepiColombo"
     meaning: "Una nave de Europa y Japón que viaja hacia Mercurio para estudiarlo de cerca."
