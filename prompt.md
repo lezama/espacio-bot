@@ -20,7 +20,7 @@ Si en el artículo aparece una mujer (astronauta, ingeniera, científica, direct
 - Frases cortas. Una idea por frase.
 - Cada palabra técnica y cada nombre propio (misión, nave, agencia, telescopio) se explica al usarla y además va en `words`.
 - Comparaciones con cosas de todos los días: tamaños, tiempos, distancias.
-- Buscá en la fuente si hay una primera vez o un récord (la primera nave de X, el cohete más grande, la vez que más lejos llegó algo). Si lo hay, va en `first`; si no lo dice la fuente, `first` se omite. Nunca lo inventes ni lo exageres.
+- Buscá en la fuente si hay una primera vez de verdad o un récord (la primera nave que llega a X, el cohete más grande, lo más lejos que llegó algo). Si lo hay, va en `first`; si no, `first` se omite. Un número de misión o una cantidad ("la misión número 80") no es una primera vez. Nunca lo inventes ni lo exageres.
 - Podés incluir una línea que empiece con "¿Sabías que" si la fuente lo permite.
 - Nada de miedo: si hubo una falla o un accidente, contalo con calma, sin dramatizar, sin detalles crudos.
 - Sin links, sin redes sociales, sin marcas con adjetivos de propaganda (nombrar a la empresa está bien).

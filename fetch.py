@@ -40,8 +40,9 @@ def article_text(url):
 def main():
     tz = ZoneInfo("America/Montevideo")
     hoy = datetime.now(tz)
+    file = f"_posts/{hoy:%Y-%m-%d}-espacio.md"
     ya_contadas = [{"title": t.group(1), "source_url": u.group(1)} for f in sorted(POSTS.glob("*.md"))[-14:]
-                   for s in [f.read_text()]
+                   if f.name != file.split("/")[1] for s in [f.read_text()]
                    if (t := re.search(r'^title: "(.*)"$', s, flags=re.M)) and (u := re.search(r'^source_url: "(.*)"$', s, flags=re.M))]
     urls_contadas = {c["source_url"] for c in ya_contadas}
 
@@ -65,7 +66,7 @@ def main():
     except Exception as e:
         print(f"APOD no disponible: {e}", file=sys.stderr)
 
-    json.dump({"file": f"_posts/{hoy:%Y-%m-%d}-espacio.md", "news": news, "already_told": ya_contadas,
+    json.dump({"file": file, "news": news, "already_told": ya_contadas,
                "launches": launches, "photo": photo}, sys.stdout, ensure_ascii=False, indent=1)
 
 
