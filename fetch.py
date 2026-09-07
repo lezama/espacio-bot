@@ -40,12 +40,14 @@ def article_text(url):
 def main():
     tz = ZoneInfo("America/Montevideo")
     hoy = datetime.now(tz)
-    ya_contadas = [m.group(1) for f in sorted(POSTS.glob("*.md"))[-14:]
-                   if (m := re.search(r'^source_url: "(.*)"$', f.read_text(), flags=re.M))]
+    ya_contadas = [{"title": t.group(1), "source_url": u.group(1)} for f in sorted(POSTS.glob("*.md"))[-14:]
+                   for s in [f.read_text()]
+                   if (t := re.search(r'^title: "(.*)"$', s, flags=re.M)) and (u := re.search(r'^source_url: "(.*)"$', s, flags=re.M))]
+    urls_contadas = {c["source_url"] for c in ya_contadas}
 
     articles = get_json(NEWS_URL)["results"]
     with ThreadPoolExecutor(8) as ex:
-        texts = ex.map(lambda a: None if a["url"] in ya_contadas else article_text(a["url"]), articles)
+        texts = ex.map(lambda a: None if a["url"] in urls_contadas else article_text(a["url"]), articles)
     news = [{"title": a["title"], "source_name": a["news_site"], "source_url": a["url"],
              "published": a["published_at"][:10], "summary": a["summary"], "text": t}
             for a, t in zip(articles, texts)]

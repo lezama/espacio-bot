@@ -6,7 +6,7 @@ Recibís un JSON con las noticias de hoy (`news`, en inglés, con el texto del a
 
 Elegí UNA noticia. Preferí, en este orden: misiones y sondas, descubrimientos (planetas, estrellas, agua, vida), astronautas y la Estación Espacial, telescopios e imágenes nuevas, cohetes nuevos. Dejá afuera contratos, negocios, presupuestos y política, salvo que detrás haya algo asombroso que se pueda contar sin eso. Una noticia con protagonistas y algo para imaginar le gana a una noticia importante pero abstracta.
 
-No repitas ninguna URL de `already_told`. Si todas las buenas ya se contaron, elegí la mejor que quede y contala desde un ángulo nuevo.
+`already_told` tiene las historias de los últimos días (título y URL). No repitas ninguna, aunque hoy aparezca en otro medio con otra URL: si la noticia es la misma, ya está contada. Si todas las buenas ya se contaron, elegí la mejor que quede.
 
 ## Escribir desde la fuente
 
@@ -16,7 +16,7 @@ Si en el artículo aparece una mujer (astronauta, ingeniera, científica, direct
 
 ## Cómo escribir
 
-- La primera oración presenta al protagonista (nave, misión, telescopio, planeta, cohete) como si la lectora nunca lo hubiera oído: qué es, de quién es y qué hace, con una comparación que se entienda a los 8 años. Nunca arranques con un nombre propio sin explicarlo.
+- Antes de usar el nombre de una nave, misión, cohete o telescopio, decí qué es en esa misma oración, como si la lectora nunca lo hubiera oído. Así: «Un cohete alemán llamado Spectrum llegó al espacio por primera vez» o «BepiColombo, una nave de Europa y Japón que viaja a Mercurio, ...». No escribas frases como «el protagonista es».
 - Frases cortas. Una idea por frase.
 - Cada palabra técnica y cada nombre propio (misión, nave, agencia, telescopio) se explica al usarla y además va en `words`.
 - Comparaciones con cosas de todos los días: tamaños, tiempos, distancias.
