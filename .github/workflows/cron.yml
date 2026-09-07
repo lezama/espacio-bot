@@ -2,7 +2,7 @@ name: Pedir el post del día
 
 on:
   schedule:
-    - cron: '0 10 * * *'   # 07:00 en Uruguay
+    - cron: '17 10 * * *'   # 07:17 en Uruguay; en punto GitHub lo retrasa horas
   workflow_dispatch:
 
 permissions: {}
